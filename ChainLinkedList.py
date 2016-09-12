@@ -51,7 +51,7 @@ def main():
     cll.add(30);
     cll.add(203);
 
-    cll.getList();
+    #cll.getList();
 
 if __name__ == "__main__":
     main();
