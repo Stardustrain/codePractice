@@ -22,7 +22,6 @@ class Node:
     def next_p(self, next_p):
         self.__next_p=next_p;
 
-
 class ChainLinkedList:
 
     __head=None;
@@ -33,11 +32,12 @@ class ChainLinkedList:
         node.data=data;
         node.next_p=self.__head;
 
-        if node.next_p is None:
+        if self.__head is None:
             self.__f_node=node;
-
-        self.__head=node;
-        self.__f_node.next_p=self.__head;
+            self.__head=node;
+        else:
+            self.__head=node;
+            self.__f_node.next_p=self.__head;
 
     def getList(self):
         cur=self.__head;
@@ -68,7 +68,7 @@ class ChainLinkedList:
 
         while ind<=l_size:
             if cur.data==data:
-                return tuple([ind, cur.data]);
+                return ind, cur.data;
             else:
                 cur=cur.next_p;
                 ind+=1;
@@ -77,7 +77,22 @@ class ChainLinkedList:
             return "not found data : %d" %data;
 
     def remove(self, ind):
-        
+        cur=self.__head;
+
+        if ind > 0:
+
+            for i in range(ind):
+                prev=cur
+                cur=cur.next_p;
+
+            prev.next_p=cur.next_p;
+            del cur
+
+        else:
+            self.__head=cur.next_p;
+            self.__f_node.next_p=self.__head;
+            del cur;
+
 
 
 def main():
