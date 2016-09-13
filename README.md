@@ -1,6 +1,6 @@
 # Data Structure
->#### LinkedList.py<br>
-> - fuction
+1. LinkedList.py<br>
+> fuction
 > - remove() 및 search()에서 index값 return<br>
 > 
->#### ChainLinkedList.py
+2. ChainLinkedList.py
