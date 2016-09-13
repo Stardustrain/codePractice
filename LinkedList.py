@@ -94,7 +94,6 @@ class LinkedList:
         f_node.next_p=None;
 
 
-
 def main():
     ll=LinkedList();
     ll.add(3);
@@ -103,11 +102,11 @@ def main():
     ll.add(72);
     ll.add(100);
     ll.add(120);
-#    print("List struct")
-#    ll.getList();
-#    print("remove obj");
-#    ll.remove(1);
-#    ll.getList();
+    #    print("List struct")
+    #    ll.getList();
+    #    print("remove obj");
+    #    ll.remove(1);
+    #    ll.getList();
     '''
     ll.getList();
     print("+++++++++++++++++++++++++")
@@ -117,3 +116,4 @@ def main():
 
 if __name__=="__main__":
     main();
+

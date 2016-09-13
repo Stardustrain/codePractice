@@ -22,6 +22,7 @@ class Node:
     def next_p(self, next_p):
         self.__next_p=next_p;
 
+
 class ChainLinkedList:
 
     __head=None;
