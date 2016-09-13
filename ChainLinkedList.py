@@ -76,6 +76,9 @@ class ChainLinkedList:
         if ind>l_size:
             return "not found data : %d" %data;
 
+    def remove(self, ind):
+        
+
 
 def main():
     cll=ChainLinkedList();
