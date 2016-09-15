@@ -10,3 +10,4 @@
 > - reverse()
 
 >### ChainLinkedList.py
+# Effective Python
