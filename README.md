@@ -8,7 +8,9 @@
 > - search()
 > - getList()
 > - reverse()
-
+>
 >### ChainLinkedList.py
+>### DoubleLinkedList.py
+
 
 # Effective Python
