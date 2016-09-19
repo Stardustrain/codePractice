@@ -37,7 +37,7 @@ class LinkedList:
     def getList(self):
         cur=self.__head;
 
-        while cur != None:
+        while cur is not None:
             print(cur.data);
             cur=cur.next_p;
 
