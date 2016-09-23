@@ -44,12 +44,12 @@ class Stack:
         print(self.__head.data);
 
     def pop(self):
-        ret = self.__head;
-        del_node=ret
-        self.__head=ret.next_p;
+        ret = self.__head.data;
+        del_node = self.__head
+        self.__head = ret.next_p;
         self.remove(del_node);
 
-        return ret.data
+        return ret
 
     def remove(self, d_node):
         d_node.next_p=None;
