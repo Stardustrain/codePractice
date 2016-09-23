@@ -44,7 +44,7 @@ class LinkedList:
     def search(self, data):
         cur=self.__head;
         ind=0;
-        while cur != None:
+        while cur is not None:
             if cur.data==data:
                 return tuple([ind, cur.data]);
             else :
@@ -53,7 +53,7 @@ class LinkedList:
     def size(self):
         cur=self.__head;
         size=0;
-        while cur != None:
+        while cur is not None:
             size+=1;
             cur=cur.next_p;
 
@@ -71,7 +71,7 @@ class LinkedList:
                 prev=cur;
                 cur=cur.next_p;
 
-        if prev == None:
+        if prev is None:
             self.__head=cur.next_p;
         else :
             prev.next_p=cur.next_p;
@@ -84,7 +84,7 @@ class LinkedList:
         prev=cur;
         cur=cur.next_p;
 
-        while cur != None:
+        while cur is not None:
             self.__head=cur;
             temp_p=cur.next_p;
             cur.next_p=prev;

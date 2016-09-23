@@ -44,23 +44,29 @@ class Stack:
         print(self.__head.data);
 
     def pop(self):
-        print(self.__head.data);
-        self.__head=self.__head.next_p;
-        self.remove(self.__head);
+        ret = self.__head;
+        del_node=ret
+        self.__head=ret.next_p;
+        self.remove(del_node);
+
+        return ret.data
 
     def remove(self, d_node):
         d_node.next_p=None;
         del d_node;
 
     def isEmpty(self):
-        pass;
+        return True if self.__head is None else False
 
 
 def main():
     st=Stack();
     st.push(5);
     st.push(20);
-    st.pop();
+    st.getStack()
+    data=st.pop();
+    print("pop : {data}".format(data=data))
     st.getStack();
+    print(st.isEmpty())
 if __name__=="__main__":
     main();
