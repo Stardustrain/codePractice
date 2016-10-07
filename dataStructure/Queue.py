@@ -31,7 +31,7 @@ class Queue:
     def __init__(self):
         pass
 
-    def enQueue(self, data):
+    def en_queue(self, data):
         node = Node()
         node.data = data
         if self.__head is None:
@@ -41,13 +41,13 @@ class Queue:
             self.__cur_node.next_p = node
             self.__cur_node = node
 
-    def deQueue(self):
+    def de_queue(self):
         ret = self.__head
         self.__head = self.__head.next_p
 
         return ret
 
-    def getQueue(self):
+    def get_queue(self):
         cur = self.__head
 
         while cur is not None :
@@ -60,19 +60,19 @@ class Queue:
 
 def main():
     qu=Queue();
-    qu.enQueue(5)
-    qu.enQueue(6)
-    qu.enQueue(7)
-    qu.enQueue(8)
-    qu.enQueue("last")
+    qu.en_queue(5)
+    qu.en_queue(6)
+    qu.en_queue(7)
+    qu.en_queue(8)
+    qu.en_queue("last")
 
-    qu.getQueue()
+    qu.get_queue()
 
-    qu.deQueue()
+    qu.de_queue()
 
     print("===============")
 
-    qu.getQueue()
+    qu.get_queue()
 
 
 if __name__ == "__main__":
