@@ -23,8 +23,7 @@ class LinkedList:
         self.tail.next_p = node
         self.tail = node
 
-
-    def getList(self):
+    def get_list(self):
         cur = self.head.next_p
 
         while cur is not None:
@@ -59,7 +58,6 @@ class LinkedList:
                 return ret
         return False
 
-
     def length(self):
         return self._numOfSize
 
@@ -71,7 +69,7 @@ def main():
     ll.add(4)
     ll.add(5)
     ll.remove(5)
-    ll.getList()
+    ll.get_list()
     ll.length()
 
 
