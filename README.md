@@ -1,16 +1,19 @@
 # Data Structure
 ## List
->### LinkedList.py
-> fuction
-> - add()
-> - remove()
-> - size()
-> - search()
-> - getList()
-> - reverse()
->
->### ChainLinkedList.py
->### DoubleLinkedList.py
+- LinkedList
+- Dummy_LinkedList
+- ChainLinkedList
+- DoubleLinkedList
 
+## Stack
+- stack
 
-# Effective Python
+## Queue
+- Queue
+- Dequeue
+
+# Sorting Algorithms
+- Bubble Sort
+- Insert Sort
+- Quick Sort
+
