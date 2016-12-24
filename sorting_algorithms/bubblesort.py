@@ -1,4 +1,4 @@
-class Bubblesort(object):
+class BubbleSort(object):
 
     # 무조건 입력받은 배열의 길이만큼 sorting을 실행
     def bubblesort(self, candidate_arr):
@@ -27,7 +27,7 @@ class Bubblesort(object):
 
 def main():
     arr = [5, 2, 7, 1, 6, 3]
-    b = Bubblesort()
+    b = BubbleSort()
     # b.bubblesort(arr)
     b.short_bubblesort(arr)
     print(arr)
