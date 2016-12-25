@@ -1,19 +1,19 @@
 # Data Structure
 ## List
-- LinkedList
-- Dummy_LinkedList
-- ChainLinkedList
-- DoubleLinkedList
+- [LinkedList](https://github.com/Stardustrain/codePractice/blob/master/dataStructure/LinkedList.py)
+- [DummyLinkedList](https://github.com/Stardustrain/codePractice/blob/master/dataStructure/dummy_LinkedList.py)
+- [ChainLinkedList](https://github.com/Stardustrain/codePractice/blob/master/dataStructure/ChainLinkedList.py)
+- [DoubleLinkedList](https://github.com/Stardustrain/codePractice/blob/master/dataStructure/DoubleLinkedList.py)
 
 ## Stack
-- stack
+- [Stack](https://github.com/Stardustrain/codePractice/blob/master/dataStructure/Stack.py)
 
 ## Queue
-- Queue
-- Dequeue
+- [Queue](https://github.com/Stardustrain/codePractice/blob/master/dataStructure/Queue.py)
+- [Dequeue](https://github.com/Stardustrain/codePractice/blob/master/dataStructure/Dequeue.py)
 
 # Sorting Algorithms
-- Bubble Sort
-- Insert Sort
-- Quick Sort
+- [Bubble Sort](https://github.com/Stardustrain/codePractice/blob/master/sorting_algorithms/bubblesort.py)
+- [Insert Sort](https://github.com/Stardustrain/codePractice/blob/master/sorting_algorithms/insertsort.py)
+- [Quick Sort](https://github.com/Stardustrain/codePractice/blob/master/sorting_algorithms/quicksort.py)
 
