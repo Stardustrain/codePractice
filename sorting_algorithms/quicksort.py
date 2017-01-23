@@ -1,3 +1,6 @@
+import unittest
+
+
 class QuickSort(object):
 
     def change_pivot(self, arr):
@@ -13,7 +16,7 @@ class QuickSort(object):
         return arr
 
     def quick_sort(self, arr):
-        self._quick_sort_exchange(arr, 0, len(arr)-1)
+        return self._quick_sort_exchange(arr, 0, len(arr)-1)
 
     def _quick_sort_exchange(self, candidate_arr, start, end):
         if start < end:
@@ -21,6 +24,8 @@ class QuickSort(object):
 
             self._quick_sort_exchange(candidate_arr, start, split_point-1)
             self._quick_sort_exchange(candidate_arr, split_point+1, end)
+
+        return candidate_arr
 
     def _partition(self, candidate_arr, start, end):
         pivot = candidate_arr[start]
@@ -34,12 +39,25 @@ class QuickSort(object):
                 high -= 1
 
             if low <= high:
-                tmp = candidate_arr[low]
-                candidate_arr[low] = candidate_arr[high]
-                candidate_arr[high] = tmp
+                candidate_arr[low], candidate_arr[high] = candidate_arr[high], candidate_arr[low]
 
-        temp = candidate_arr[start]
-        candidate_arr[start] = candidate_arr[high]
-        candidate_arr[high] = temp
+        candidate_arr[start], candidate_arr[high] = candidate_arr[high], candidate_arr[start]
 
         return high
+
+
+class SortTest(unittest.TestCase):
+    def test(self):
+        q = QuickSort()
+        self.assertEqual([1, 2, 3, 5, 6, 7], q.quick_sort([5, 2, 7, 1, 6, 3]))
+        # failure Test
+        # self.assertEqual([1, 2, 3, 4, 8, 9], q.quick_sort([5, 2, 7, 1, 6, 3]))
+
+
+def main():
+    t = SortTest()
+    t.test()
+
+
+if __name__ == "__main__":
+    main()

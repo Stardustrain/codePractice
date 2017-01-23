@@ -1,3 +1,6 @@
+import unittest
+
+
 def insertsort(candidate_arr):
     for i in range(len(candidate_arr)):
         index = i
@@ -9,6 +12,15 @@ def insertsort(candidate_arr):
         candidate_arr[index] = cur_val
 
 
-arr = [5, 6, 8, 1, 3, 2]
-insertsort(arr)
-print(arr)
+class SortTest(unittest.TestCase):
+    def test(self):
+        self.assertEqual([1, 2, 3, 5, 6, 7], insertsort([5, 2, 7, 1, 6, 3]))
+
+
+def main():
+    t = SortTest()
+    t.test()
+
+
+if __name__ == "__main__":
+    main()
