@@ -1,97 +1,66 @@
 class Node:
-    __data=None;
-    __next_p=None;
-
     def __init__(self):
-        pass;
-
-    @property
-    def data(self):
-        return self.__data;
-
-    @property
-    def next_p(self):
-        return self.__next_p;
-
-    @data.setter
-    def data(self, data):
-        self.__data=data;
-
-    @next_p.setter
-    def next_p(self, next_p):
-        self.__next_p=next_p;
+        self.next_p = None
+        self.data = None
 
 
 class LinkedList:
-    __head=None;
 
     def __init__(self):
-        self.__head=None;
+        self._num_of_size = 0
+        self._head = None
 
     def add(self, data):
-        node=Node();
-        node.data=data;
-        node.next_p=self.__head;
-        self.__head=node;
+        self._num_of_size += 1
+        node = Node()
+        node.data = data
 
-    def getList(self):
-        cur=self.__head;
+        if self._head is None:
+            self._head = node
+        else:
+            node.next_p = self._head
+            self._head = node
 
-        while cur is not None:
-            print(cur.data);
-            cur=cur.next_p;
+    def _remove_node(self, remove_node, prev_node):
+        prev_node.next_p = remove_node.next_p
 
-    def search(self, data):
-        cur=self.__head;
-        ind=0;
-        while cur is not None:
-            if cur.data==data:
-                return tuple([ind, cur.data]);
-            else :
-                cur=cur.next_p;
-
-    def size(self):
-        cur=self.__head;
-        size=0;
-        while cur is not None:
-            size+=1;
-            cur=cur.next_p;
-
-        return size;
-
-    def remove(self, ind):
-        cur=self.__head;
-        prev=None;
-        size=LinkedList.size(self);
-
-        cnt=int(size-(ind+1))
-
-        if cnt != 0:
-            for i in range(cnt):
-                prev=cur;
-                cur=cur.next_p;
-
-        if prev is None:
-            self.__head=cur.next_p;
-        else :
-            prev.next_p=cur.next_p;
-
-        cur=None;
+    def remove(self, data):
+        if self._head.data == data:
+            self._num_of_size -= 1
+            self._head = self._head.next_p
+        else:
+            cur = self._head
+            while cur is not None:
+                if cur.next_p.data == data:
+                    self._num_of_size -= 1
+                    remove_node = cur.next_p
+                    prev_node = cur
+                    self._remove_node(remove_node=remove_node,
+                                      prev_node=prev_node)
+                    break
+                else:
+                    cur = cur.next_p
 
     def reverse(self):
-        cur=self.__head;
-        f_node=cur;
-        prev=cur;
-        cur=cur.next_p;
+        prev = None
+        cur = self._head
 
         while cur is not None:
-            self.__head=cur;
-            temp_p=cur.next_p;
-            cur.next_p=prev;
-            prev=cur;
-            cur=temp_p;
+            next_node = cur.next_p
+            cur.next_p = prev
+            prev = cur
+            cur = next_node
 
-        f_node.next_p=None;
+        self._head = prev
+
+    def get_list(self):
+        cur = self._head
+        while cur is not None:
+            print(cur.data)
+            cur = cur.next_p
+
+    def size(self):
+        return self._num_of_size
 
 
 def main():
@@ -102,17 +71,15 @@ def main():
     ll.add(72);
     ll.add(100);
     ll.add(120);
-    #    print("List struct")
-    #    ll.getList();
-    #    print("remove obj");
-    #    ll.remove(1);
-    #    ll.getList();
+    ll.remove(120)
+    ll.reverse()
+    ll.get_list()
+    print("size : {}".format(ll.size()))
     '''
-    ll.getList();
     print("+++++++++++++++++++++++++")
     '''
-    ll.reverse();
-    ll.getList()
+    # ll.reverse();
+    # ll.getList()
 
 if __name__=="__main__":
     main();
