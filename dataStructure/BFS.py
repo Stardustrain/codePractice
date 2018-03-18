@@ -2,7 +2,7 @@ import types
 from collections import deque
 
 
-class DFS:
+class BFS:
     queue = deque()
     graph = {}
     searched_list = []
