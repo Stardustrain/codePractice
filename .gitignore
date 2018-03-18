@@ -1,7 +1,7 @@
 *.iml
 .idea/
 *.bak
-
+*.vscode
 # Created by https://www.gitignore.io/api/windows,intellij,python
 
 ### Windows ###
